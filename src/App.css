@@ -1,38 +1,371 @@
-.App {
+body {
+  margin: 0;
+  background: #0f172a;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;              /* important */
+  height: 70px;
+  background: #020617;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  box-sizing: border-box; /* THIS fixes the cut-off */
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #38bdf8;
+  border: 2px solid #38bdf8;
+  padding: 8px 14px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 85vh;   /* was 100vh */
+  padding: 100px 100px 40px; /* reduced bottom padding */
+}
+
+.hero-left img {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #38bdf8;
+  box-shadow: 0 0 40px rgba(56,189,248,0.6);
+}
+
+.hero-right {
+  max-width: 550px;
+}
+
+.hero-right h1 {
+  font-size: 64px;
+}
+
+.hero-right p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* TYPING */
+.typing {
+  color: #38bdf8;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #38bdf8;
+  max-width: 0;
+  animation: typing 3.5s steps(16) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from { max-width: 0; }
+  to { max-width: 16ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* SECTIONS */
+.section {
+  padding: 40px 50px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* SKILLS */
+
+.section h2 {
+  font-size: 48px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #38bdf8;
+  text-shadow: 0 0 20px rgba(56,189,248,0.6);
+  letter-spacing: 2px;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 900px;
+  margin: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.skill-card {
+  background: #020617;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(56,189,248,0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.skill-card img {
+  width: 60px;
+}
+
+/* PROJECTS */
+.project {
+  background: #1e293b;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+/* SCROLL ANIMATION */
+.animate,
+.animate-left,
+.animate-right {
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.animate {
+  transform: translateY(60px);
+}
+
+.animate-left {
+  transform: translateX(-120px);
+}
+
+.animate-right {
+  transform: translateX(120px);
+}
+
+.show {
+  opacity: 1;
+  transform: translate(0);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+}
+
+/* ================= TIMELINE ================= */
+
+.timeline {
+  padding: 100px 0;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 48px;
+  color: #38bdf8;
+  margin-bottom: 80px;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Center vertical line */
+.timeline-container::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: linear-gradient(to bottom, #38bdf8, #22c55e);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  width: 48%;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* Left side */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+/* Right side */
+.timeline-item.right {
+  left: 52%;
+  text-align: left;
+}
+
+/* Connector dot */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  top: 38px;
+  width: 16px;
+  height: 16px;
+  background: #38bdf8;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Dot positions */
+.timeline-item.left::after {
+  right: -8px;
+}
+
+.timeline-item.right::after {
+  left: -8px;
+}
+
+/* Connecting line from dot to box */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 45px;
+  width: 40px;
+  height: 2px;
+  background: #38bdf8;
+  z-index: 1;
+}
+
+.timeline-item.left::before {
+  right: 8px;
+}
+
+.timeline-item.right::before {
+  left: 8px;
+}
+
+/* Content box */
+.timeline-content {
+  background: #020617;
+  padding: 22px 32px;
+  min-width: 420px;
+  max-width: 540px;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(56,189,248,0.3);
+  transition: 0.3s ease;
+}
+
+/* Box alignment */
+.timeline-item.left .timeline-content {
+  margin-right: 70px;
+  border-right: 4px solid #38bdf8;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 70px;
+  border-left: 4px solid #38bdf8;
+}
+
+/* Project title */
+.timeline-content h3 {
+  color: #22c55e;
+  font-size: 22px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Hover */
+.timeline-content:hover {
+  transform: scale(1.03);
+}
+
+.contact-section {
+  padding: 80px 10%;
+  background: #0b1220;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Left side title */
+.contact-title h2 {
+  font-size: 48px;
+  color: #38bdf8;
+}
+
+.contact-title p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+/* Right side links */
+.contact-links {
+  display: flex;
+  gap: 40px;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.contact-links a i {
+  font-size: 28px;
+  color: #38bdf8;
+}
+
+.contact-links a:hover {
+  color: #38bdf8;
+  transform: translateY(-3px);
+}
+.timeline-item.left .timeline-content {
+  margin-right: 30px;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 30px;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 38px;
+  width: 30px;
+  height: 2px;
+  background: #38bdf8;
+  z-index: 1;
+}
+
+.timeline-item.left::before {
+  right: 8px;
+}
+
+.timeline-item.right::before {
+  left: 8px;
 }
