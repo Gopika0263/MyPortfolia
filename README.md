@@ -25,7 +25,7 @@ Intersection Observer API for scroll animations
 FontAwesome for icons
 
 Installation
-git clone https://github.com/Gopika0263/MyPortfolia.gitgit status
+git clone https://github.com/Gopika0263/MyPortfolia.git status
 cd react-portfolio
 npm install
 npm start
