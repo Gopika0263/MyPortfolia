@@ -50,10 +50,7 @@ function App() {
       {/* HERO */}
       <section id="home" className="hero">
         <div className="hero-left animate-left">
-          <img
-            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill[1]}/${skill[1]}-original.svg`}
-            alt={skill[0]}
-          />
+          <img src={profile} alt="Gopika" />
         </div>
 
         <div className="hero-right animate-right">
@@ -83,7 +80,8 @@ function App() {
           ].map((skill, i) => (
             <div className="skill-card" key={i}>
               <img
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill[1]}/${skill[1]}-original.svg`}
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
+                alt={`${tech} icon`} // Make sure every image has alt text
               />
               <p>{skill[0]}</p>
             </div>
