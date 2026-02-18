@@ -24,6 +24,17 @@ function App() {
     elements.forEach((el) => observer.observe(el));
   }, []);
 
+  const skills = [
+    ["Java", "java"],
+    ["HTML", "html5"],
+    ["CSS", "css3"],
+    ["JavaScript", "javascript"],
+    ["React", "react"],
+    ["Node.js", "nodejs"],
+    ["Express", "express"],
+    ["MongoDB", "mongodb"],
+  ];
+
   return (
     <div>
       {/* NAVBAR */}
@@ -52,7 +63,6 @@ function App() {
         <div className="hero-left animate-left">
           <img src={profile} alt="Gopika" />
         </div>
-
         <div className="hero-right animate-right">
           <h1>Gopika K</h1>
           <h2 className="typing">Software Engineer</h2>
@@ -68,20 +78,11 @@ function App() {
       <section className="section animate">
         <h2>Skills</h2>
         <div className="skills-grid">
-          {[
-            ["Java", "java"],
-            ["HTML", "html5"],
-            ["CSS", "css3"],
-            ["JavaScript", "javascript"],
-            ["React", "react"],
-            ["Node.js", "nodejs"],
-            ["Express", "express"],
-            ["MongoDB", "mongodb"],
-          ].map(([name, tech]) => (
+          {skills.map(([name, tech]) => (
             <div className="skill-card" key={tech}>
               <img
                 src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
-                alt={`${name} icon`} // now each img has a proper alt
+                alt={`${name} icon`}
               />
               <p>{name}</p>
             </div>
@@ -92,58 +93,41 @@ function App() {
       {/* PROJECTS */}
       <section id="projects" className="timeline">
         <h2 className="timeline-title">Projects</h2>
-
         <div className="timeline-container">
-          <div className="timeline-item left animate-left">
-            <div className="timeline-content">
-              <h3>AI Personal Assistant for Farmers</h3>
-              <p>
-                An AI-powered assistant that helps farmers with crop
-                suggestions, weather updates, and farming guidance using modern
-                web technologies.
-              </p>
+          {[
+            [
+              "AI Personal Assistant for Farmers",
+              "An AI-powered assistant that helps farmers with crop suggestions, weather updates, and farming guidance using modern web technologies.",
+              "left",
+            ],
+            [
+              "Food Donation Web App",
+              "A platform that connects food donors with NGOs and needy people to reduce food waste and help communities.",
+              "right",
+            ],
+            [
+              "Movie Search Web App",
+              "A responsive web app that allows users to search movies using an API and view detailed movie information.",
+              "left",
+            ],
+            [
+              "To-Do List Application",
+              "A task management app that allows users to add, delete, and track their daily tasks with a clean UI.",
+              "right",
+            ],
+            [
+              "Portfolio Website",
+              "A personal portfolio built using React showcasing my skills, projects, and professional profile with modern animations.",
+              "left",
+            ],
+          ].map(([title, desc, side], i) => (
+            <div className={`timeline-item ${side} animate-${side}`} key={i}>
+              <div className="timeline-content">
+                <h3>{title}</h3>
+                <p>{desc}</p>
+              </div>
             </div>
-          </div>
-
-          <div className="timeline-item right animate-right">
-            <div className="timeline-content">
-              <h3>Food Donation Web App</h3>
-              <p>
-                A platform that connects food donors with NGOs and needy people
-                to reduce food waste and help communities.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-item left animate-left">
-            <div className="timeline-content">
-              <h3>Movie Search Web App</h3>
-              <p>
-                A responsive web app that allows users to search movies using an
-                API and view detailed movie information.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-item right animate-right">
-            <div className="timeline-content">
-              <h3>To-Do List Application</h3>
-              <p>
-                A task management app that allows users to add, delete, and
-                track their daily tasks with a clean UI.
-              </p>
-            </div>
-          </div>
-
-          <div className="timeline-item left animate-left">
-            <div className="timeline-content">
-              <h3>Portfolio Website</h3>
-              <p>
-                A personal portfolio built using React showcasing my skills,
-                projects, and professional profile with modern animations.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -154,33 +138,28 @@ function App() {
             <h2>Contact</h2>
             <p>Let’s connect and build something great</p>
           </div>
-
           <div className="contact-links">
             <a
               href="https://github.com/Gopika0263"
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-github"></i>
-              GitHub
+              <i className="fa-brands fa-github"></i> GitHub
             </a>
-
             <a href="mailto:gopikakandhan63@gmail.com">
-              <i className="fa-solid fa-envelope"></i>
-              Gmail
+              <i className="fa-solid fa-envelope"></i> Gmail
             </a>
-
             <a
               href="https://linkedin.com/in/gopika-k-1067642b9/"
               target="_blank"
               rel="noreferrer"
             >
-              <i className="fa-brands fa-linkedin"></i>
-              LinkedIn
+              <i className="fa-brands fa-linkedin"></i> LinkedIn
             </a>
           </div>
         </div>
       </section>
+
       <footer>copyright © 2026 Gopika</footer>
     </div>
   );
