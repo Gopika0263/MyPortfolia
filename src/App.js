@@ -77,13 +77,13 @@ function App() {
             ["Node.js", "nodejs"],
             ["Express", "express"],
             ["MongoDB", "mongodb"],
-          ].map((skill, i) => (
-            <div className="skill-card" key={i}>
+          ].map(([name, tech]) => (
+            <div className="skill-card" key={tech}>
               <img
                 src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${tech}/${tech}-original.svg`}
-                alt={`${tech} icon`} // Make sure every image has alt text
+                alt={`${name} icon`} // now each img has a proper alt
               />
-              <p>{skill[0]}</p>
+              <p>{name}</p>
             </div>
           ))}
         </div>
