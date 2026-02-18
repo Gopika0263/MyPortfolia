@@ -50,7 +50,10 @@ function App() {
       {/* HERO */}
       <section id="home" className="hero">
         <div className="hero-left animate-left">
-          <img src={profile} alt="Gopika" />
+          <img
+            src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill[1]}/${skill[1]}-original.svg`}
+            alt={skill[0]}
+          />
         </div>
 
         <div className="hero-right animate-right">
