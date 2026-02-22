@@ -10,7 +10,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;              /* important */
+  right: 0; /* important */
   height: 70px;
   background: #020617;
   display: flex;
@@ -49,7 +49,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 85vh;   /* was 100vh */
+  min-height: 85vh; /* was 100vh */
   padding: 100px 100px 40px; /* reduced bottom padding */
 }
 
@@ -59,7 +59,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 6px solid #38bdf8;
-  box-shadow: 0 0 40px rgba(56,189,248,0.6);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.6);
 }
 
 .hero-right {
@@ -85,20 +85,28 @@ body {
   white-space: nowrap;
   border-right: 3px solid #38bdf8;
   max-width: 0;
-  animation: typing 3.5s steps(16) forwards, blink 0.7s step-end infinite;
+  animation:
+    typing 3.5s steps(16) forwards,
+    blink 0.7s step-end infinite;
 }
 @keyframes typing {
-  from { max-width: 0; }
-  to { max-width: 16ch; }
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 16ch;
+  }
 }
 
 @keyframes blink {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 
 /* SECTIONS */
 .section {
-  padding: 40px 50px;
+  padding: 1px 50px;
   text-align: center;
 }
 
@@ -109,7 +117,7 @@ body {
   margin-bottom: 50px;
   text-align: center;
   color: #38bdf8;
-  text-shadow: 0 0 20px rgba(56,189,248,0.6);
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
   letter-spacing: 2px;
 }
 .skills-grid {
@@ -124,7 +132,7 @@ body {
   background: #020617;
   padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 0 25px rgba(56,189,248,0.2);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
 }
 
 .skill-card img {
@@ -173,9 +181,7 @@ footer {
 
 /* ================= TIMELINE ================= */
 
-.timeline {
-  padding: 100px 0;
-}
+
 
 .timeline-title {
   text-align: center;
@@ -269,7 +275,7 @@ footer {
   min-width: 420px;
   max-width: 540px;
   border-radius: 8px;
-  box-shadow: 0 0 25px rgba(56,189,248,0.3);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
   transition: 0.3s ease;
 }
 
@@ -369,3 +375,49 @@ footer {
 .timeline-item.right::before {
   left: 8px;
 }
+
+/* ================= CERTIFICATES ================= */
+
+.certificates-section {
+  padding: 100px 50px;
+  text-align: center;
+}
+
+.cert-title {
+  font-size: 48px;
+  color: #38bdf8;
+  margin-bottom: 60px;
+}
+
+.cert-box-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.cert-box {
+  background: #020617;
+  width: 320px;
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+  transition: 0.3s ease;
+}
+
+.cert-box h3 {
+  font-size: 24px;
+  color: #22c55e;
+  margin-bottom: 15px;
+}
+
+.cert-box p {
+  color: #94a3b8;
+}
+
+.cert-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(56, 189, 248, 0.5);
+}
+

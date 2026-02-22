@@ -130,6 +130,32 @@ function App() {
           ))}
         </div>
       </section>
+      {/* CERTIFICATES */}
+      <section className="certificates-section">
+        <h2 className="cert-title animate">Certificates</h2>
+
+        <div className="cert-box-container">
+          <a
+            href="/certificates/internships.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="cert-box animate-left"
+          >
+            <h3>Internship</h3>
+            <p>Click to view Internship Certificate</p>
+          </a>
+
+          <a
+            href="/certificates/course.pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="cert-box animate-right"
+          >
+            <h3>Course</h3>
+            <p>Click to view Course Certificate</p>
+          </a>
+        </div>
+      </section>
 
       {/* CONTACT */}
       <section id="contact" className="contact-section">
